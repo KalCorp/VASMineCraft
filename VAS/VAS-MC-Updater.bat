@@ -32,6 +32,8 @@ powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Comp
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S >> %LogPath%
 RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> %LogPath%
 
+del /Q %localFolder%\%repoName%-%branch%.zip
+del /Q /S "%localFolder%\%repoName%-%branch%"
 
 
 
