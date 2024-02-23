@@ -38,7 +38,7 @@ move /y "%localFolder%\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS-MC-Updater-P
 echo Update Post bat
 echo set localFolder=%localFolder% > "%localFolder%\tmpfile.txt"
 type "%localFolder%\VAS-MC-Updater-Post.bat" >> "%localFolder%\tmpfile.txt"
-Echo move /y "%localFolder%\tmpfile.txt" "%localFolder%\VAS-MC-Updater-Post.bat"
+move /y "%localFolder%\tmpfile.txt" "%localFolder%\VAS-MC-Updater-Post.bat"
 
 echo DONE
 
