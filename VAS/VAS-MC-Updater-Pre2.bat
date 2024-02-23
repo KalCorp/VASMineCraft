@@ -1,4 +1,4 @@
-=@echo off
+==@echo off
 
 Set LogPath="%INST_MC_DIR%\VAS\VAS-MC.Log"
 
@@ -37,7 +37,7 @@ move /y "%localFolder%\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS-MC-Updater-P
 
 echo Update Post bat
 echo set localFolder=%localFolder%> "%localFolder%\tmpfile.txt"
-type "%localFolder%\VAS-MC-Updater-Post.bat" >> "%localFolder%\tmpfile.txt"
+type "%localFolder%\VAS-MC-Updater-Post.bat">> "%localFolder%\tmpfile.txt"
 move /y "%localFolder%\tmpfile.txt" "%localFolder%\VAS-MC-Updater-Post.bat"
 
 echo DONE
