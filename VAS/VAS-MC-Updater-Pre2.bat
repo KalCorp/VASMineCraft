@@ -31,13 +31,7 @@ powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Comp
 RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S
 
-echo del VAS-MC-Updater-Post.bat
-Del /Q /F "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
-if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" echo post found after delete?
-
-if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" echo REN VAS-MC-Updater-Post2.bat
-if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" VAS-MC-Updater-Post.bat
-if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" echo post found?
+move /y "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
 
 echo Update Post bat
 echo set localFolder=%localFolder%\%repoName%-%branch% > "%localFolder%\%repoName%-%branch%\VAS\tmpfile.txt"
