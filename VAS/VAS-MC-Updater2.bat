@@ -1,4 +1,3 @@
-
 @echo off
 
 Set LogPath="%INST_MC_DIR%\VAS\VAS-MC.Log"
@@ -32,6 +31,7 @@ powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Comp
 RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> %LogPath%
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S >> %LogPath%
 
+Echo Done
 
 
 
