@@ -1,4 +1,3 @@
-=
 @echo off
 
 md %INST_MC_DIR%\VAS
@@ -37,6 +36,7 @@ RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> 
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S >> %LogPath%
 
 echo Download complete. >> %LogPath%
+
 
 
 
