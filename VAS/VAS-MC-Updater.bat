@@ -1,9 +1,7 @@
+
 @echo off
 
-md %INST_MC_DIR%\VAS
-
 set VASNAME=VASMineCraft-VAS-MC-1.20.1-Forge
-
 Set LogPath="%INST_MC_DIR%\VAS\VAS-MC.Log"
 
 Echo Test bat started > %LogPath%
