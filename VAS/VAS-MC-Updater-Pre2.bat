@@ -1,4 +1,3 @@
-=
 @echo off
 
 Set LogPath="%INST_MC_DIR%\VAS\VAS-MC.Log"
