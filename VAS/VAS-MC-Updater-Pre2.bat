@@ -1,4 +1,4 @@
-@echo off
+=@echo off
 
 Set LogPath="%INST_MC_DIR%\VAS\VAS-MC.Log"
 
@@ -32,13 +32,13 @@ RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S
 
 echo Move Post2 to Post
-echo move /y "%localFolder%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS\VAS-MC-Updater-Post.bat"
-move /y "%localFolder%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS\VAS-MC-Updater-Post.bat"
+echo move /y "%localFolder%\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS-MC-Updater-Post.bat"
+move /y "%localFolder%\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS-MC-Updater-Post.bat"
 
 echo Update Post bat
-echo set localFolder=%localFolder% > "%localFolder%\VAS\tmpfile.txt"
-type "%localFolder%\VAS\VAS-MC-Updater-Post.bat" >> "%localFolder%\VAS\tmpfile.txt"
-Echo move /y "%localFolder%\VAS\tmpfile.txt" "%localFolder%\VAS\VAS-MC-Updater-Post.bat"
+echo set localFolder=%localFolder% > "%localFolder%\tmpfile.txt"
+type "%localFolder%\VAS-MC-Updater-Post.bat" >> "%localFolder%\tmpfile.txt"
+Echo move /y "%localFolder%\tmpfile.txt" "%localFolder%\VAS-MC-Updater-Post.bat"
 
 echo DONE
 
