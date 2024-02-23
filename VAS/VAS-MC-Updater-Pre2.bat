@@ -39,12 +39,13 @@ if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" echo R
 if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" VAS-MC-Updater-Post.bat
 if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" echo post found?
 
-
+echo Update Post bat
 echo set localFolder=%localFolder%\%repoName%-%branch% > "%localFolder%\%repoName%-%branch%\VAS\tmpfile.txt"
 type "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" >> "%localFolder%\%repoName%-%branch%\VAS\tmpfile.txt"
 move /y "%localFolder%\%repoName%-%branch%\VAS\tmpfile.txt" "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
 
-Echo DONE!
+
+echo DONE
 
 
 
