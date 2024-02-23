@@ -1,4 +1,4 @@
-
+=
 @echo off
 
 Set LogPath="%INST_MC_DIR%\VAS\VAS-MC.Log"
@@ -36,5 +36,5 @@ Del /Q "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
 REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
 
 
-
+Echo DONE
 
