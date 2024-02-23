@@ -32,7 +32,7 @@ RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> 
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S >> %LogPath%
 
 if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" Del /Q "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
-if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
+if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" VAS-MC-Updater-Post.bat
 
 
 Echo DONE
