@@ -23,7 +23,7 @@ set "zipUrl=https://github.com/%repoOwner%/%repoName%/archive/%branch%.zip"
 REM Download the ZIP file
 curl -L -o "%localFolder%\%repoName%-%branch%.zip" "%zipUrl%" >> %LogPath%
 
-rem del /Q /S "%localFolder%\%repoName%-%branch%"
+del /Q /S "%localFolder%\%repoName%-%branch%"
 
 REM Unzip the contents to the specified folder
 powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('%localFolder%\%repoName%-%branch%.zip', '%localFolder%');}"
