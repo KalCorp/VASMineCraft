@@ -33,9 +33,11 @@ RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR 
 
 echo del VAS-MC-Updater-Post.bat
 Del /Q /F "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
+if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" echo post found after delete?
 
-echo REN VAS-MC-Updater-Post2.bat
-REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" VAS-MC-Updater-Post.bat
+if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" echo REN VAS-MC-Updater-Post2.bat
+if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" VAS-MC-Updater-Post.bat
+if exist "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" echo post found?
 
 Echo DONE!
 
