@@ -31,6 +31,9 @@ powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Comp
 RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S
 
+Del /Q "%localFolder%\%repoName%-%branch%.zip"
+Del /Q /S "%localFolder%\%repoName%-%branch%"
+
 echo Move Post2 to Post
 echo move /y "%localFolder%\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS-MC-Updater-Post.bat"
 move /y "%localFolder%\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS-MC-Updater-Post.bat"
