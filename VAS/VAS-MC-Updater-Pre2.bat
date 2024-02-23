@@ -26,15 +26,16 @@ curl -L -o "%localFolder%\%repoName%-%branch%.zip" "%zipUrl%" >> %LogPath%
 rem del /Q /S "%localFolder%\%repoName%-%branch%"
 
 REM Unzip the contents to the specified folder
-powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('%localFolder%\%repoName%-%branch%.zip', '%localFolder%');}" >> %LogPath%
+powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('%localFolder%\%repoName%-%branch%.zip', '%localFolder%');}"
 
-RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> %LogPath%
-RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S >> %LogPath%
+RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods
+RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S
 
 echo del VAS-MC-Updater-Post.bat
-Del /Q /F "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" >> %LogPath%
-echo REN VAS-MC-Updater-Post2.bat
-REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" VAS-MC-Updater-Post.bat >> %LogPath%
+Del /Q /F "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
 
-Echo DONE
+echo REN VAS-MC-Updater-Post2.bat
+REN "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" VAS-MC-Updater-Post.bat
+
+Echo DONE!
 
