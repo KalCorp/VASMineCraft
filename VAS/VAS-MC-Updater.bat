@@ -29,10 +29,9 @@ del /Q /S "%localFolder%\%repoName%-%branch%"
 REM Unzip the contents to the specified folder
 powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('%localFolder%\%repoName%-%branch%.zip', '%localFolder%');}" >> %LogPath%
 
-RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> %LogPath%
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S >> %LogPath%
+RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> %LogPath%
 
-echo Download complete. >> %LogPath%
 
 
 
