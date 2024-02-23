@@ -33,7 +33,7 @@ RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR 
 RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods >> %LogPath%
 
 del /Q %localFolder%\%repoName%-%branch%.zip
-del /Q /S "%localFolder%\%repoName%-%branch%"
+
 
 
 
