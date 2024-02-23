@@ -31,13 +31,14 @@ powershell -command "& {Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Comp
 RoboCopy "%localFolder%\%repoName%-%branch%" "%INST_MC_DIR%" *.* /S /XD mods
 RoboCopy "%localFolder%\%repoName%-%branch%\mods" "%INST_MC_DIR%\mods" *.* /MIR /S
 
-move /y "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
+echo Move Post2 to Post
+echo move /y "%localFolder%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS\VAS-MC-Updater-Post.bat"
+move /y "%localFolder%\VAS\VAS-MC-Updater-Post2.bat" "%localFolder%\VAS\VAS-MC-Updater-Post.bat"
 
 echo Update Post bat
-echo set localFolder=%localFolder%\%repoName%-%branch% > "%localFolder%\%repoName%-%branch%\VAS\tmpfile.txt"
-type "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat" >> "%localFolder%\%repoName%-%branch%\VAS\tmpfile.txt"
-move /y "%localFolder%\%repoName%-%branch%\VAS\tmpfile.txt" "%localFolder%\%repoName%-%branch%\VAS\VAS-MC-Updater-Post.bat"
-
+echo set localFolder=%localFolder% > "%localFolder%\VAS\tmpfile.txt"
+type "%localFolder%\VAS\VAS-MC-Updater-Post.bat" >> "%localFolder%\VAS\tmpfile.txt"
+Echo move /y "%localFolder%\VAS\tmpfile.txt" "%localFolder%\VAS\VAS-MC-Updater-Post.bat"
 
 echo DONE
 
