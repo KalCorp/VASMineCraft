@@ -1,5 +1,4 @@
 
-Del /Q /F "%localFolder%\VAS\VAS-MC-Updater-Pre.bat"
-REN "%localFolder%\VAS\VAS-MC-Updater-Pre2.bat" VAS-MC-Updater-Pre.bat
+move /y "%localFolder%\VAS\VAS-MC-Updater-Pre.bat" "%localFolder%\VAS\VAS-MC-Updater-Pre.bat"
 
 Echo Done!
